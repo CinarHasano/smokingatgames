@@ -61,4 +61,3 @@ The findings from this project aim to provide **insightful, data-driven conclusi
 
 ---
 
-This README file is structured according to the **DSA210 project guidelines** and will be updated as the project progresses.
