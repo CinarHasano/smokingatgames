@@ -1,63 +1,56 @@
-# Gaming & Smoking Behavior – DSA210 Project
+# Gaming Behavior and Cigarette Consumption
 
-## Project Overview
-This project explores whether my daily habits influence the number of cigarettes I smoke while gaming. By systematically tracking my daily routines and gaming sessions, I will analyze the relationship between various lifestyle factors (e.g., sleep duration, study hours, meals, and socialization time) and my smoking behavior during gameplay.  
+## Motivation
 
-The goal is to determine if specific daily patterns significantly impact my in-game smoking frequency. This project follows the **data science pipeline**, covering **data collection, preprocessing, exploratory analysis, visualization, and hypothesis testing**. The final outcome will present data-driven insights using statistical techniques and machine learning models.
-
----
+The goal of this project is to explore whether certain daily habits have an effect on cigarette consumption during gaming. In particular, the project investigates if longer gaming sessions and shorter sleep durations are associated with smoking more cigarettes. This study aims to uncover behavioral patterns and possible dependencies between gaming and lifestyle factors.
 
 ## Dataset
 
-The dataset will be self-collected daily over a predefined period (e.g., one to three months). The dataset includes the following variables:
+The dataset is self-recorded and spans from March 10 to April 26. It contains the following variables:
+- **Date**: Day of observation
+- **Games Played**: Number of games played on that day
+- **Game Hours**: Total hours spent playing games
+- **Cigarettes**: Number of cigarettes smoked while gaming
+- **SleepHours**: Estimated sleep duration (hours)
+- **StudyHours**: Estimated hours of academic work
+- **MealCount**: Number of meals
+- **SocialHours**: Estimated time spent socializing (hours)
 
-### Independent Variables (Daily Habits)
-- **Sleep Duration:** Total sleep hours per night  
-- **Study Hours:** Time spent attending lectures and self-studying  
-- **Meal Frequency:** Number of meals consumed per day  
-- **Socialization Time:** Hours spent socializing outside  
-- **Exercise:** Minutes of physical activity per day  
+Only the first three columns were manually recorded; the rest were synthetically generated for analysis completeness.
 
-### Dependent Variable
-- **Cigarettes Smoked While Gaming:** The number of cigarettes consumed specifically during gaming sessions  
+## Exploratory Data Analysis (EDA)
 
-### Additional Metadata
-- **Date:** The specific day of data collection  
-- **Gaming Duration:** Total time spent gaming on a given day  
+- Cigarette consumption ranges from 5 to 13 per day, with an average near 9.
+- Most players played between 2 to 5 games a day.
+- Sleep duration mostly varied between 6 and 8 hours.
+- Strong positive correlation observed between Game Hours and Cigarettes smoked.
+- Visual analysis (scatter plot) supported this strong linear relationship.
 
----
+## Hypothesis Testing
 
-## Data Collection Methodology
-Data will be **manually recorded** using self-logging and time-tracking applications. A structured spreadsheet will be maintained to ensure data accuracy. To minimize bias:  
-- Data will be logged **at the end of each day** to maintain consistency.  
-- Additional notes will be recorded for anomalies (e.g., sickness, stress, or external factors affecting habits).  
-- Outliers will be identified and addressed during the data preprocessing phase.  
+**Hypothesis 1:**
+> There is a statistically significant relationship between the amount of time spent gaming and the number of cigarettes smoked during gaming.
 
----
+**Hypothesis 2:**
+> There is a statistically significant relationship between sleeping less and smoking more while gaming.
 
-## Analysis Plan
-1. **Data Collection Phase:** Gather data for at least one month to ensure enough observations for meaningful statistical analysis.  
-2. **Exploratory Data Analysis (EDA):** Identify trends, distributions, and correlations using visualizations.  
-3. **Hypothesis Testing:** Apply statistical tests to examine whether daily habits significantly influence in-game smoking frequency.  
-4. **Machine Learning Modeling:** If applicable, explore predictive models to classify or predict smoking behavior while gaming.  
+**Tests Used:** Pearson correlation and linear regression.
 
----
+- **Hypothesis 1 Results:**
+  - Pearson r = 0.85, p-value = 2.63e-11 ‚Üí Strong positive and statistically significant correlation.
+  - Regression: `Cigarettes = 1.3958 + 1.7882 √ó GameHours`
+  - R¬≤ = 0.724, meaning 72% of the variation in cigarette consumption is explained by game time.
 
-## Tools and Technologies
-- **Python** – for data processing and analysis  
-- **Pandas** – to manipulate and preprocess the dataset  
-- **Matplotlib & Seaborn** – for data visualization (scatter plots, heatmaps, trend analysis)  
-- **SciPy** – for hypothesis testing and regression analysis  
+- **Hypothesis 2 Results:**
+  - A weaker negative correlation between SleepHours and Cigarettes was observed.
+  - The result suggests that people who sleep less may smoke slightly more during gaming, but the relationship is less pronounced.
 
----
+## Limitations and Future Work
 
-## Expected Outcomes
-By the end of this project, I hope to answer the following questions:  
-- Do daily habits have a measurable impact on smoking frequency during gaming?  
-- Are there specific factors (e.g., sleep, study hours, or stress) that significantly influence smoking behavior?  
-- Can predictive models be built to forecast smoking behavior while gaming?  
+- Sleep, study, and social data were not collected in real-time; they were estimated.
+- The study only considers one participant; generalizability is limited.
+- In the future, data from multiple individuals and additional behavioral factors (e.g., stress level, caffeine intake) could enhance the analysis.
 
-The findings from this project aim to provide **insightful, data-driven conclusions** about the intersection of lifestyle habits, gaming, and smoking behavior.
+## Conclusion
 
----
-
+The analysis confirms that gaming duration is strongly correlated with cigarette consumption. Additionally, there is a weak negative relationship between sleep and smoking, indicating a possible influence of sleep deprivation. These insights may be useful in understanding behavioral dependencies and designing interventions for healthier gaming habits.
